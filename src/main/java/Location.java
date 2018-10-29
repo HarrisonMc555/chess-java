@@ -4,11 +4,10 @@ class Location {
   private int rowIndex;
   private int colIndex;
 
-  private static final int BOARD_SIZE = 8;
   private static final int MIN_ROW_INDEX = 0;
-  private static final int MAX_ROW_INDEX = BOARD_SIZE;
+  private static final int MAX_ROW_INDEX = Board.BOARD_WIDTH;
   private static final int MIN_COL_INDEX = 0;
-  private static final int MAX_COL_INDEX = BOARD_SIZE;
+  private static final int MAX_COL_INDEX = Board.BOARD_HEIGHT;
 
   public Location(int rowIndex, int colIndex) {
     if (!isValidRowIndex(rowIndex)) {
@@ -19,6 +18,14 @@ class Location {
     }
     this.rowIndex = rowIndex;
     this.colIndex = colIndex;
+  }
+
+  public int row() {
+    return this.rowIndex;
+  }
+
+  public int col() {
+    return this.colIndex;
   }
 
   private boolean isValidRowIndex(int rowIndex) {

@@ -1,7 +1,11 @@
 package chess;
 
-import java.util.List;
+public class Piece {
+  private PieceType type;
+  private Team team;
 
-public interface Piece {
-  public List<Location> getValidMoves(Board board);
+  public Piece(PieceType type, Team team) {
+    this.type = type;
+    this.team = team;
+  }
 }
